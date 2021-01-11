@@ -2,16 +2,20 @@
 
 <div align="center">
 
-![GitHub repo size](https://img.shields.io/github/repo-size/jamesnoria/el_comercio_scraper) ![GitHub top language](https://img.shields.io/github/languages/top/jamesnoria/el_comercio_scraper) ![GitHub](https://img.shields.io/github/license/jamesnoria/el_comercio_scraper) ![GitHub last commit](https://img.shields.io/github/last-commit/jamesnoria/el_comercio_scraper)
+![GitHub repo size](https://img.shields.io/github/repo-size/jamesnoria/udh_calculator) ![GitHub top language](https://img.shields.io/github/languages/top/jamesnoria/udh_calculator) ![GitHub](https://img.shields.io/github/license/jamesnoria/udh_calculator) ![GitHub last commit](https://img.shields.io/github/last-commit/jamesnoria/udh_calculator)
 
 </div>
 
 
-![image]()
+![image](https://github.com/jamesnoria/udh_calculator/blob/master/assets/init.gif)
 
 ## Descripción:
 
 - Este proyecto comenzó siendo una automatización personal para saber que notas necesito para un determinado promedio, luego fue creciendo hasta el punto que pensé en lo interesante y útil que sería compartirlo con mis compañeros de la facultad o universidad.
+
+## Funcionalidad:
+
+- El programa entra al intranet de la UDH y coloca los datos ingresados previamente por el usuario de manera automática e ingresa al apartado de Notas Parciales de donde extrae las notas de los seis primeros cursos y se cierra al mismo tiempo que entrega la interfaz grafica de la "calculadora de promedios."
 
 ## Pre-requisitos:
 
@@ -22,10 +26,10 @@
 
 ## Como usarlo:
 
-1. Clonar este repositorio:
+1. Clonar este repositorio o bajar el zip:
 
     ```shell
-    git clone https://github.com/jamesnoria/el_comercio_scraper.git
+    git clone https://github.com/jamesnoria/udh_calculator.git
     ```
 
 2. Acceder a la carpeta:
@@ -39,22 +43,31 @@
     ```shell
     pip install -r requirements.txt
     ```
+4. Modificar las siguientes lineas en el archivo main.py, colocar los datos correspondientes **DENTRO DE LAS COMIILLAS** y asegurarse que sean los correctos:
 
-4. Ejecutar el script:
+    ```python
+        student = UdhAutomatization('',#-> CODIGO DE ALUMNO
+                                    '',#-> CONTRASEÑA
+                                    '')#-> DNI
+    ```
+
+5. Una vez guardado el archivo main.py con los datos, ejecutar el script:
 
     ```shell
     python main.py #Windows
     python3 main.py #Linux or Unix
     ```
 
-5. Ver nuestro archivo `.csv` (se generan dentro de la carpeta 'csv_files'):
+6. Insertar el código captcha solicitado:
 
     ```shell
-    ls ./csv_files/
+    ¿Cual es el código que aparece?:
     ```
 
+7. Disfrutar de la calculadora de promedios.
 ## Notas:
 - El script esta limitado apenas para seis cursos, si deseas para más puedes escribirme a mi email en la sección de Contacto.
+- Caso no funcione, revise bien esta documentación o ingrese sus datos de alumno correctamente. Puede contactarse conmigo para cualquier duda.
 
 ## To-Do:
 (*siéntase libre de colaborar*)
