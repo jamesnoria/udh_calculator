@@ -9,12 +9,12 @@ class UdhAutomatization:
         # open chrome and udh website
 
         # Linux:
-        #self.driver = webdriver.Chrome(
-        #    executable_path=r'./chromedriver')
+        self.driver = webdriver.Chrome(
+           executable_path=r'/home/james/chromedriver')
 
         # Windows:
-        self.driver = webdriver.Chrome(
-            executable_path=r'.\chromedriver.exe')
+        # self.driver = webdriver.Chrome(
+            # executable_path=r'.\chromedriver.exe')
 
         self.driver.get('http://www.udh.edu.pe/websauh/alogin.aspx')
 
@@ -41,7 +41,7 @@ class UdhAutomatization:
 
         # Access to 'notas parciales'
         student_grades = self.driver.find_element_by_xpath(
-            '//*[@id="ctl00_Menu1"]/ul/li[20]/a')
+            '//*[@id="ctl00_Menu1"]/ul/li[19]/a')
         student_grades.send_keys(Keys.ENTER)
 
         # self.driver.close()

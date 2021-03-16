@@ -109,6 +109,7 @@ class UdhGui:
         else:
             f_course_efc = self.first_course[6]
             f_course_efc_ = Label(self.root, text=f_course_efc)
+            f_course_efc_.grid(row=2, column=6)
 
         first_course_mean = Label(self.root, text='00', font='bold')
         first_course_mean.grid(row=2, column=7)
@@ -176,6 +177,7 @@ class UdhGui:
         else:
             s_course_efc = self.second_course[6]
             s_course_efc_ = Label(self.root, text=s_course_efc)
+            s_course_efc_.grid(row=3, column=6)
 
         second_course_mean = Label(self.root, text='00', font='bold')
         second_course_mean.grid(row=3, column=7)
@@ -243,6 +245,7 @@ class UdhGui:
         else:
             t_course_efc = self.third_course[6]
             t_course_efc_ = Label(self.root, text=t_course_efc)
+            t_course_efc_.grid(row=4, column=6)
 
         third_course_mean = Label(self.root, text='00', font='bold')
         third_course_mean.grid(row=4, column=7)

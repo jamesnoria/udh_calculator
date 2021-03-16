@@ -69,11 +69,14 @@
 - El script esta limitado apenas para seis cursos, si deseas para más puedes escribirme a mi email en la sección de Contacto.
 - Caso no funcione, revise bien esta documentación o ingrese sus datos de alumno correctamente. Puede contactarse conmigo para cualquier duda.
 
-## To-Do:
-(*siéntase libre de colaborar*)
+## Bugs corregidos:
+<div align="center">
 
-- .json o CRUD para guardar datos de usario(s).
-- Hacer el script ejecutable.
+| FECHA | BUGS-FIXED |
+|:-:|:-:|
+| [15-03-2021] | - "Notas Parciales" xpath <br> - Supports Chrome version 90 <br> - Espacios en blanco TkinterGUI <br> - Vscode files for .gitignore |
+
+</div>
 
 ## Licencia:
 

@@ -30,8 +30,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
-lib64/
 parts/
 sdist/
 var/
@@ -109,6 +107,9 @@ ipython_config.py
 #   install all needed dependencies.
 #Pipfile.lock
 
+# poetry
+#poetry.lock
+
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow
 __pypackages__/
 
@@ -120,8 +121,9 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
-.venv
+# .env
+.env/
+.venv/
 env/
 venv/
 ENV/
@@ -150,28 +152,13 @@ dmypy.json
 # pytype static type analyzer
 .pytype/
 
+# operating system-related files
+*.DS_Store #file properties cache/storage on macOS
+Thumbs.db #thumbnail cache on Windows
+
 # profiling data
 .prof
 
-### Vim ###
-# Swap
-[._]*.s[a-v][a-z]
-!*.svg  # comment out if you don't need vector files
-[._]*.sw[a-p]
-[._]s[a-rt-v][a-z]
-[._]ss[a-gi-z]
-[._]sw[a-p]
-
-# Session
-Session.vim
-Sessionx.vim
-
-# Temporary
-.netrwhist
-# Auto-generated tag files
-tags
-# Persistent undo
-[._]*.un~
 
 ### VisualStudioCode ###
 .vscode/*
@@ -183,29 +170,3 @@ tags
 # Ignore all local history of files
 .history
 .ionide
-
-### Windows ###
-# Windows thumbnail cache files
-Thumbs.db
-Thumbs.db:encryptable
-ehthumbs.db
-ehthumbs_vista.db
-
-# Dump file
-*.stackdump
-
-# Folder config file
-[Dd]esktop.ini
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msix
-*.msm
-*.msp
-
-# Windows shortcuts
-*.lnk
