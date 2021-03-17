@@ -7,7 +7,7 @@
 </div>
 
 
-![image](https://github.com/jamesnoria/udh_calculator/blob/master/assets/init.gif)
+![image](https://github.com/jamesnoria/udh_calculator/blob/main/assets/init.gif)
 
 ## Descripción:
 

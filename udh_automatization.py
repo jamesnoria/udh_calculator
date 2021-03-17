@@ -8,13 +8,9 @@ class UdhAutomatization:
     def __init__(self, student_id, student_password, student_dni):
         # open chrome and udh website
 
-        # Linux:
-        self.driver = webdriver.Chrome(
-            executable_path=r'/home/james/chromedriver')
-
         # Windows:
-        # self.driver = webdriver.Chrome(
-        # executable_path=r'.\chromedriver.exe')
+        self.driver = webdriver.Chrome(
+        executable_path=r'.\chromedriver.exe')
 
         self.driver.get('http://www.udh.edu.pe/websauh/alogin.aspx')
 
