@@ -29,34 +29,27 @@
 1. Clonar este repositorio o bajar el zip:
 
     ```shell
-    git clone https://github.com/jamesnoria/udh_calculator.git
+    $ git clone https://github.com/jamesnoria/udh_calculator.git
     ```
 
 2. Acceder a la carpeta:
 
     ```shell
-    cd udh_calculator/
+    $ cd udh_calculator/
     ```
 
 3. Instalar las librerias y paquetes necesarios (dentro de un ambiente virtual):
 
     ```shell
-    pip install -r requirements.txt
-    ```
-4. Modificar las siguientes lineas en el archivo main.py, colocar los datos correspondientes **DENTRO DE LAS COMIILLAS** y asegurarse que sean los correctos:
-
-    ```python
-        student = UdhAutomatization('',#-> CODIGO DE ALUMNO
-                                    '',#-> CONTRASEÑA
-                                    '')#-> DNI
+    $ pip install -r requirements.txt
     ```
 
-5. Una vez guardado el archivo main.py con los datos, ejecutar el script:
+4. Ejecutar el script:
 
     ```shell
-    python main.py #Windows
-    python3 main.py #Linux or Unix
+    $ python3 main.py
     ```
+5. Registrase como nuevo usuario y verificar los datos correctamente para que el programa funcione correctamente. Entonces el programa iniciará.
 
 6. Insertar el código captcha solicitado:
 
@@ -64,10 +57,18 @@
     ¿Cual es el código que aparece?:
     ```
 
-7. Disfrutar de la calculadora de promedios.
 ## Notas:
 - El script esta limitado apenas para seis cursos, si deseas para más puedes escribirme a mi email en la sección de Contacto.
 - Caso no funcione, revise bien esta documentación o ingrese sus datos de alumno correctamente. Puede contactarse conmigo para cualquier duda.
+
+## Features:
+<div align="center">
+
+| FECHA | BUGS-FIXED |
+|:-:|:-:|
+| [16-03-2021] | - Registro inicial para nuevos usuarios. |
+
+</div>
 
 ## Bugs corregidos:
 <div align="center">
