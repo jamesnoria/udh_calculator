@@ -10,7 +10,7 @@ class UdhAutomatization:
 
         # Windows:
         self.driver = webdriver.Chrome(
-        executable_path=r'.\chromedriver.exe')
+        executable_path='../chromedriver')
 
         self.driver.get('http://www.udh.edu.pe/websauh/alogin.aspx')
 
@@ -207,8 +207,36 @@ class UdhAutomatization:
             '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[7]/td[11]').text
         sixth_course_grades.append(sixth_score_efc)
 
+        # return a list with the name and all grades
+        return sixth_course_grades
+
+    def seventh_course(self):
+        # Access to the seventh course and every grade in it
+        seventh_course_grades = []
+        seventh_course_name = self.driver.find_element_by_xpath(
+            '//*[@id="ctl00_ContentPlaceHolder1_GridView1_ctl08_Label2"]').text
+        seventh_course_grades.append(seventh_course_name)
+        seventh_score_ta1 = self.driver.find_element_by_xpath(
+            '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[8]/td[4]').text
+        seventh_course_grades.append(seventh_score_ta1)
+        seventh_score_ta2 = self.driver.find_element_by_xpath(
+            '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[8]/td[5]').text
+        seventh_course_grades.append(seventh_score_ta2)
+        seventh_score_ta3 = self.driver.find_element_by_xpath(
+            '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[8]/td[6]').text
+        seventh_course_grades.append(seventh_score_ta3)
+        seventh_score_ta4 = self.driver.find_element_by_xpath(
+            '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[8]/td[7]').text
+        seventh_course_grades.append(seventh_score_ta4)
+        seventh_score_emc = self.driver.find_element_by_xpath(
+            '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[8]/td[10]').text
+        seventh_course_grades.append(seventh_score_emc)
+        seventh_score_efc = self.driver.find_element_by_xpath(
+            '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[8]/td[11]').text
+        seventh_course_grades.append(seventh_score_efc)
+
         # closing chrome after get info
         self.driver.close()
 
         # return a list with the name and all grades
-        return sixth_course_grades
+        return seventh_course_grades

@@ -8,7 +8,7 @@ class UdhGui:
 
     def __init__(self, root, first_course, second_course,
                  third_course, fourth_course, fifth_course,
-                 sixth_course):
+                 sixth_course, seventh_course):
 
         self.root = root
         self.root.title('Calculadora de Promedios UDH')
@@ -19,6 +19,7 @@ class UdhGui:
         self.fourth_course = fourth_course
         self.fifth_course = fifth_course
         self.sixth_course = sixth_course
+        self.seventh_course = seventh_course
 
         courses_names = Label(self.root, text='CURSOS', padx=20)
         ta1 = Label(self.root, text='TA1', padx=20)
@@ -50,7 +51,7 @@ class UdhGui:
             mean['text'] = round((tests + int(emc) + int(efc)) / 3)
             return mean
         except ValueError:
-            print('Por favor, inserte solo número.\nPlese, numbers only.')
+            print('Por favor, inserte solo números.\nPlese, numbers only.')
 
     def first_course_gui(self):
 
@@ -460,6 +461,74 @@ class UdhGui:
                                                                        sixth_course_ta4, sixth_course_emc, sixth_course_efc))
         sixth_course_button.grid(row=7, column=8)
 
+    def seventh_course_gui(self):
+
+        seventh_course_name = Label(self.root, text=self.seventh_course[0])
+        seventh_course_name.grid(row=8, column=0)
+        # getting the "TA1, TA2, TA3, TA4, EMC, EFC" grades
+        if self.seventh_course[1] == '0':
+            seventh_course_ta1 = Entry(self.root, width=2)
+            seventh_course_ta1.insert(0, '00')
+            seventh_course_ta1.grid(row=8, column=1)
+        else:
+            seventh_course_ta1 = self.seventh_course[1]
+            seventh_course_ta1_ = Label(self.root, text=seventh_course_ta1)
+            seventh_course_ta1_.grid(row=8, column=1)
+
+        if self.seventh_course[2] == '0':
+            seventh_course_ta2 = Entry(self.root, width=2)
+            seventh_course_ta2.insert(0, '00')
+            seventh_course_ta2.grid(row=8, column=2)
+        else:
+            seventh_course_ta2 = self.seventh_course[2]
+            seventh_course_ta2_ = Label(self.root, text=seventh_course_ta2)
+            seventh_course_ta2_.grid(row=8, column=2)
+
+        if self.seventh_course[3] == '0':
+            seventh_course_ta3 = Entry(self.root, width=2)
+            seventh_course_ta3.insert(0, '00')
+            seventh_course_ta3.grid(row=8, column=3)
+        else:
+            seventh_course_ta3 = self.seventh_course[3]
+            seventh_course_ta3_ = Label(self.root, text=seventh_course_ta3)
+            seventh_course_ta3_.grid(row=8, column=3)
+
+        if self.seventh_course[4] == '0':
+            seventh_course_ta4 = Entry(self.root, width=2)
+            seventh_course_ta4.insert(0, '00')
+            seventh_course_ta4.grid(row=8, column=4)
+        else:
+            seventh_course_ta4 = self.seventh_course[4]
+            seventh_course_ta4_ = Label(self.root, text=seventh_course_ta4)
+            seventh_course_ta4_.grid(row=8, column=4)
+
+        if self.seventh_course[5] == '0':
+            seventh_course_emc = Entry(self.root, width=2)
+            seventh_course_emc.insert(0, '00')
+            seventh_course_emc.grid(row=8, column=5)
+        else:
+            seventh_course_emc = self.seventh_course[5]
+            seventh_course_emc_ = Label(self.root, text=seventh_course_emc)
+            seventh_course_emc_.grid(row=8, column=5)
+
+        if self.seventh_course[6] == '0':
+            seventh_course_efc = Entry(self.root, width=2)
+            seventh_course_efc.insert(0, '00')
+            seventh_course_efc.grid(row=8, column=6)
+        else:
+            seventh_course_efc = self.seventh_course[6]
+            seventh_course_efc_ = Label(self.root, text=seventh_course_efc)
+            seventh_course_efc_.grid(row=8, column=6)
+
+        seventh_course_media = Label(self.root, text='00', font='bold')
+        seventh_course_media.grid(row=8, column=7)
+
+        seventh_course_button = Button(self.root, text='Calcular',
+                                     command=lambda: self.media_button(seventh_course_media,
+                                                                       seventh_course_ta1, seventh_course_ta2, seventh_course_ta3,
+                                                                       seventh_course_ta4, seventh_course_emc, seventh_course_efc))
+        seventh_course_button.grid(row=8, column=8)
+
     def main(self):
         self.first_course_gui()
         self.second_course_gui()
@@ -467,3 +536,4 @@ class UdhGui:
         self.fourth_course_gui()
         self.fifth_course_gui()
         self.sixth_course_gui()
+        self.seventh_course_gui()
