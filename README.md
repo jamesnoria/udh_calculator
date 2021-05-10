@@ -64,9 +64,10 @@
 ## Features:
 <div align="center">
 
-| FECHA | BUGS-FIXED |
+| FECHA | FEATURES |
 |:-:|:-:|
 | [16-03-2021] | - Registro inicial para nuevos usuarios. |
+| [08-03-2021] | - 7 cursos agregados.                    |
 
 </div>
 
