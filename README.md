@@ -23,6 +23,7 @@
 - Python 3.6+
 - pip
 - Unix-shell (no excluyente)
+- Descargar el chromedriver [click aquí](https://chromedriver.storage.googleapis.com/index.html?path=91.0.4472.19/)
 
 ## Como usarlo:
 

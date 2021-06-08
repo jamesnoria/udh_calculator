@@ -10,7 +10,7 @@ class UdhAutomatization:
 
         # Windows:
         self.driver = webdriver.Chrome(
-        executable_path='../chromedriver')
+        executable_path='') #coloca aquí el path del chromedriver
 
         self.driver.get('http://www.udh.edu.pe/websauh/alogin.aspx')
 
