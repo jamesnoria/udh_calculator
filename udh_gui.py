@@ -1,5 +1,5 @@
 # made by: James Noria
-from tkinter import *
+from tkinter import * #sudo apt-get install python3-tk
 from udh_automatization import UdhAutomatization
 
 
