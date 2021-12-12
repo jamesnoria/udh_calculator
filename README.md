@@ -23,7 +23,6 @@
 - Python 3.6+
 - pip
 - Unix-shell (no excluyente)
-- Descargar el chromedriver [click aquí](https://chromedriver.storage.googleapis.com/index.html?path=91.0.4472.19/)
 
 ## Como usarlo:
 
@@ -69,6 +68,7 @@
 |:-:|:-:|
 | [16-03-2021] | - Registro inicial para nuevos usuarios. |
 | [08-03-2021] | - 7 cursos agregados.                    |
+| [12-12-2021] | - Slowly migration to Selenium4.         |
 
 </div>
 
@@ -87,4 +87,4 @@
 
 ## Contacto:
 
-- [![Twitter Badge](https://img.shields.io/badge/-James_Noria-1ca0f1?style=flat-square&logo=twitter&logoColor=white&link=https://twitter.com/jamesnoria)](https://twitter.com/jamesnoria) [![Gmail Badge](https://img.shields.io/badge/-jamesnoria@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:jamesnoria@gmail.com)](mailto:jamesnoria@gmail.com)
+- [![Protonmail](https://img.shields.io/badge/jamesnoria@pm.me-8B89CC?style=for-the-badge&logo=protonmail&logoColor=white&link=mailto:jamesnoria@pm.me)](mailto:jamesnoria@pm.me) [![Twitter](https://img.shields.io/badge/@jamesnoria-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](http://twitter.com/jamesnoria)

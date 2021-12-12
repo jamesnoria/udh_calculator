@@ -1,16 +1,15 @@
 # made by: James Noria
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 class UdhAutomatization:
 
     def __init__(self, student_id, student_password, student_dni):
-        # open chrome and udh website
 
-        # Windows:
-        self.driver = webdriver.Chrome(
-        executable_path='./chromedriver') #coloca aquí el path del chromedriver
+        # open chrome and udh website
+        self.driver = webdriver.Chrome(ChromeDriverManager().install())
 
         self.driver.get('http://www.udh.edu.pe/websauh/alogin.aspx')
 
@@ -37,7 +36,7 @@ class UdhAutomatization:
 
         # Access to 'notas parciales'
         student_grades = self.driver.find_element_by_xpath(
-            '//*[@id="ctl00_Menu1"]/ul/li[19]/a')
+            '//*[@id="ctl00_Menu1"]/ul/li[22]/a')
         student_grades.send_keys(Keys.ENTER)
 
         # self.driver.close()
@@ -178,6 +177,8 @@ class UdhAutomatization:
         fifth_score_efc = self.driver.find_element_by_xpath(
             '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[6]/td[11]').text
         fifth_course_grades.append(fifth_score_efc)
+
+        self.driver.close()
 
         # return a list with the name and all grades
         return fifth_course_grades

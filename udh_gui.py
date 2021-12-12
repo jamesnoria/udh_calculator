@@ -1,5 +1,9 @@
 # made by: James Noria
-from tkinter import * #sudo apt-get install python3-tk
+
+# If you're using any LinuxDistro, consider install tkinter:
+# sudo apt-get install python3-tk
+
+from tkinter import *
 from udh_automatization import UdhAutomatization
 
 
@@ -7,8 +11,8 @@ from udh_automatization import UdhAutomatization
 class UdhGui:
 
     def __init__(self, root, first_course, second_course,
-                 third_course, fourth_course, fifth_course,
-                 sixth_course, seventh_course):
+                 third_course, fourth_course, fifth_course):
+        # sixth_course, seventh_course):
 
         self.root = root
         self.root.title('Calculadora de Promedios UDH')
@@ -18,8 +22,8 @@ class UdhGui:
         self.third_course = third_course
         self.fourth_course = fourth_course
         self.fifth_course = fifth_course
-        self.sixth_course = sixth_course
-        self.seventh_course = seventh_course
+        # self.sixth_course = sixth_course
+        # self.seventh_course = seventh_course
 
         courses_names = Label(self.root, text='CURSOS', padx=20)
         ta1 = Label(self.root, text='TA1', padx=20)
@@ -524,9 +528,9 @@ class UdhGui:
         seventh_course_media.grid(row=8, column=7)
 
         seventh_course_button = Button(self.root, text='Calcular',
-                                     command=lambda: self.media_button(seventh_course_media,
-                                                                       seventh_course_ta1, seventh_course_ta2, seventh_course_ta3,
-                                                                       seventh_course_ta4, seventh_course_emc, seventh_course_efc))
+                                       command=lambda: self.media_button(seventh_course_media,
+                                                                         seventh_course_ta1, seventh_course_ta2, seventh_course_ta3,
+                                                                         seventh_course_ta4, seventh_course_emc, seventh_course_efc))
         seventh_course_button.grid(row=8, column=8)
 
     def main(self):
@@ -535,5 +539,5 @@ class UdhGui:
         self.third_course_gui()
         self.fourth_course_gui()
         self.fifth_course_gui()
-        self.sixth_course_gui()
-        self.seventh_course_gui()
+        # self.sixth_course_gui()
+        # self.seventh_course_gui()
