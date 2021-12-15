@@ -11,8 +11,8 @@ from udh_automatization import UdhAutomatization
 class UdhGui:
 
     def __init__(self, root, first_course, second_course,
-                 third_course, fourth_course, fifth_course):
-        # sixth_course, seventh_course):
+                 third_course, fourth_course, fifth_course,
+                 sixth_course, seventh_course):
 
         self.root = root
         self.root.title('Calculadora de Promedios UDH')
@@ -22,8 +22,8 @@ class UdhGui:
         self.third_course = third_course
         self.fourth_course = fourth_course
         self.fifth_course = fifth_course
-        # self.sixth_course = sixth_course
-        # self.seventh_course = seventh_course
+        self.sixth_course = sixth_course
+        self.seventh_course = seventh_course
 
         courses_names = Label(self.root, text='CURSOS', padx=20)
         ta1 = Label(self.root, text='TA1', padx=20)
@@ -55,7 +55,7 @@ class UdhGui:
             mean['text'] = round((tests + int(emc) + int(efc)) / 3)
             return mean
         except ValueError:
-            print('Por favor, inserte solo números.\nPlese, numbers only.')
+            print('Por favor, inserte solo números.\nPlease, numbers only.')
 
     def first_course_gui(self):
 
@@ -539,5 +539,5 @@ class UdhGui:
         self.third_course_gui()
         self.fourth_course_gui()
         self.fifth_course_gui()
-        # self.sixth_course_gui()
-        # self.seventh_course_gui()
+        self.sixth_course_gui()
+        self.seventh_course_gui()
