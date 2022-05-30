@@ -69,6 +69,7 @@
 | [16-03-2021] | - Registro inicial para nuevos usuarios. |
 | [08-03-2021] | - 7 cursos agregados.                    |
 | [12-12-2021] | - Slowly migration to Selenium4.         |
+| [30-05-2022] | - Quinta nota agregada                   |
 
 </div>
 
@@ -87,4 +88,4 @@
 
 ## Contacto:
 
-- [![Protonmail](https://img.shields.io/badge/jamesnoria@pm.me-8B89CC?style=for-the-badge&logo=protonmail&logoColor=white&link=mailto:jamesnoria@pm.me)](mailto:jamesnoria@pm.me) [![Twitter](https://img.shields.io/badge/@jamesnoria-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](http://twitter.com/jamesnoria)
+- [![Portfolio](https://img.shields.io/badge/www.jamesnoria.me-000000?style=for-the-badge&logo=About.me&logoColor=white)](https://jamesnoria.me/) [![Personal Mail](https://img.shields.io/badge/jnoria.dev@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white&link=mailto:jnoria.dev@gmail.com)](mailto:jnoria.dev@gmail.com) [![Linkedin](https://img.shields.io/badge/jamesnoria-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jamesnoria/)

@@ -30,6 +30,7 @@ class UdhGui:
         ta2 = Label(self.root, text='TA2', padx=20)
         ta3 = Label(self.root, text='TA3', padx=20)
         ta4 = Label(self.root, text='TA4', padx=20)
+        ta5 = Label(self.root, text='TA5', padx=20)
         emc = Label(self.root, text='EMC', padx=20)
         efc = Label(self.root, text='EFC', padx=20)
         promedio = Label(self.root, text='PROMEDIO', padx=20)
@@ -39,19 +40,21 @@ class UdhGui:
         ta2.grid(row=1, column=2)
         ta3.grid(row=1, column=3)
         ta4.grid(row=1, column=4)
-        emc.grid(row=1, column=5)
-        efc.grid(row=1, column=6)
-        promedio.grid(row=1, column=7)
+        ta5.grid(row=1, column=5)
+        emc.grid(row=1, column=6)
+        efc.grid(row=1, column=7)
+        promedio.grid(row=1, column=8)
 
-    def media_button(self, mean, ta1, ta2, ta3, ta4, emc, efc):
+    def media_button(self, mean, ta1, ta2, ta3, ta4, ta5, emc, efc):
         try:
             ta1 = ta1 if type(ta1) == str else ta1.get()
             ta2 = ta2 if type(ta2) == str else ta4.get()
             ta3 = ta3 if type(ta3) == str else ta4.get()
             ta4 = ta4 if type(ta4) == str else ta4.get()
+            ta5 = ta5 if type(ta5) == str else ta5.get()
             emc = emc if type(emc) == str else emc.get()
             efc = efc if type(efc) == str else efc.get()
-            tests = (int(ta1) + int(ta2) + int(ta3) + int(ta4)) / 4
+            tests = (int(ta1) + int(ta2) + int(ta3) + int(ta4) + int(ta5)) / 5
             mean['text'] = round((tests + int(emc) + int(efc)) / 3)
             return mean
         except ValueError:
@@ -61,7 +64,7 @@ class UdhGui:
 
         first_course_name = Label(self.root, text=self.first_course[0])
         first_course_name.grid(row=2, column=0)
-        # getting the "TA1, TA2, TA3, TA4, EMC, EFC" grades
+        # getting the "TA1, TA2, TA3, TA4, TA5, EMC, EFC" grades
         if self.first_course[1] == '0':
             f_course_ta1 = Entry(self.root, width=2)
             f_course_ta1.insert(0, '00')
@@ -99,37 +102,46 @@ class UdhGui:
             f_course_ta4_.grid(row=2, column=4)
 
         if self.first_course[5] == '0':
-            f_course_emc = Entry(self.root, width=2)
-            f_course_emc.insert(0, '00')
-            f_course_emc.grid(row=2, column=5)
+            f_course_ta5 = Entry(self.root, width=2)
+            f_course_ta5.insert(0, '00')
+            f_course_ta5.grid(row=2, column=5)
         else:
-            f_course_emc = self.first_course[5]
-            f_course_emc_ = Label(self.root, text=f_course_emc)
-            f_course_emc_.grid(row=2, column=5)
+            f_course_ta5 = self.first_course[5]
+            f_course_ta5_ = Label(self.root, text=f_course_ta5)
+            f_course_ta5_.grid(row=2, column=5)
 
         if self.first_course[6] == '0':
+            f_course_emc = Entry(self.root, width=2)
+            f_course_emc.insert(0, '00')
+            f_course_emc.grid(row=2, column=6)
+        else:
+            f_course_emc = self.first_course[6]
+            f_course_emc_ = Label(self.root, text=f_course_emc)
+            f_course_emc_.grid(row=2, column=6)
+
+        if self.first_course[7] == '0':
             f_course_efc = Entry(self.root, width=2)
             f_course_efc.insert(0, '00')
-            f_course_efc.grid(row=2, column=6)
+            f_course_efc.grid(row=2, column=7)
         else:
-            f_course_efc = self.first_course[6]
+            f_course_efc = self.first_course[7]
             f_course_efc_ = Label(self.root, text=f_course_efc)
-            f_course_efc_.grid(row=2, column=6)
+            f_course_efc_.grid(row=2, column=7)
 
         first_course_mean = Label(self.root, text='00', font='bold')
-        first_course_mean.grid(row=2, column=7)
+        first_course_mean.grid(row=2, column=8)
 
         first_course_button = Button(self.root, text='Calcular',
                                      command=lambda: self.media_button(first_course_mean,
                                                                        f_course_ta1, f_course_ta2, f_course_ta3,
-                                                                       f_course_ta4, f_course_emc, f_course_efc))
-        first_course_button.grid(row=2, column=8)
+                                                                       f_course_ta4, f_course_ta5, f_course_emc, f_course_efc))
+        first_course_button.grid(row=2, column=9)
 
     def second_course_gui(self):
 
         second_course_name = Label(self.root, text=self.second_course[0])
         second_course_name.grid(row=3, column=0)
-        # getting the "TA1, TA2, TA3, TA4, EMC, EFC" grades
+        # getting the "TA1, TA2, TA3, TA4, TA5, EMC, EFC" grades
         if self.second_course[1] == '0':
             s_course_ta1 = Entry(self.root, width=2)
             s_course_ta1.insert(0, '00')
@@ -167,31 +179,40 @@ class UdhGui:
             s_course_ta4_.grid(row=3, column=4)
 
         if self.second_course[5] == '0':
-            s_course_emc = Entry(self.root, width=2)
-            s_course_emc.insert(0, '00')
-            s_course_emc.grid(row=3, column=5)
+            s_course_ta5 = Entry(self.root, width=2)
+            s_course_ta5.insert(0, '00')
+            s_course_ta5.grid(row=3, column=5)
         else:
-            s_course_emc = self.second_course[5]
-            s_course_emc_ = Label(self.root, text=s_course_emc)
-            s_course_emc_.grid(row=3, column=5)
+            s_course_ta5 = self.second_course[5]
+            s_course_ta5_ = Label(self.root, text=s_course_ta5)
+            s_course_ta5_.grid(row=3, column=5)
 
         if self.second_course[6] == '0':
+            s_course_emc = Entry(self.root, width=2)
+            s_course_emc.insert(0, '00')
+            s_course_emc.grid(row=3, column=6)
+        else:
+            s_course_emc = self.second_course[6]
+            s_course_emc_ = Label(self.root, text=s_course_emc)
+            s_course_emc_.grid(row=3, column=6)
+
+        if self.second_course[7] == '0':
             s_course_efc = Entry(self.root, width=2)
             s_course_efc.insert(0, '00')
-            s_course_efc.grid(row=3, column=6)
+            s_course_efc.grid(row=3, column=7)
         else:
-            s_course_efc = self.second_course[6]
+            s_course_efc = self.second_course[7]
             s_course_efc_ = Label(self.root, text=s_course_efc)
-            s_course_efc_.grid(row=3, column=6)
+            s_course_efc_.grid(row=3, column=7)
 
         second_course_mean = Label(self.root, text='00', font='bold')
-        second_course_mean.grid(row=3, column=7)
+        second_course_mean.grid(row=3, column=8)
 
         second_course_button = Button(self.root, text='Calcular',
                                       command=lambda: self.media_button(second_course_mean,
                                                                         s_course_ta1, s_course_ta2, s_course_ta3,
-                                                                        s_course_ta4, s_course_emc, s_course_efc))
-        second_course_button.grid(row=3, column=8)
+                                                                        s_course_ta4, s_course_ta5, s_course_emc, s_course_efc))
+        second_course_button.grid(row=3, column=9)
 
     def third_course_gui(self):
 
@@ -235,37 +256,46 @@ class UdhGui:
             t_course_ta4_.grid(row=4, column=4)
 
         if self.third_course[5] == '0':
-            t_course_emc = Entry(self.root, width=2)
-            t_course_emc.insert(0, '00')
-            t_course_emc.grid(row=4, column=5)
+            t_course_ta5 = Entry(self.root, width=2)
+            t_course_ta5.insert(0, '00')
+            t_course_ta5.grid(row=4, column=5)
         else:
-            t_course_emc = self.third_course[5]
-            t_course_emc_ = Label(self.root, text=t_course_emc)
-            t_course_emc_.grid(row=4, column=5)
+            t_course_ta5 = self.third_course[5]
+            t_course_ta5_ = Label(self.root, text=t_course_ta5)
+            t_course_ta5_.grid(row=4, column=5)
 
         if self.third_course[6] == '0':
+            t_course_emc = Entry(self.root, width=2)
+            t_course_emc.insert(0, '00')
+            t_course_emc.grid(row=4, column=6)
+        else:
+            t_course_emc = self.third_course[6]
+            t_course_emc_ = Label(self.root, text=t_course_emc)
+            t_course_emc_.grid(row=4, column=6)
+
+        if self.third_course[7] == '0':
             t_course_efc = Entry(self.root, width=2)
             t_course_efc.insert(0, '00')
-            t_course_efc.grid(row=4, column=6)
+            t_course_efc.grid(row=4, column=7)
         else:
-            t_course_efc = self.third_course[6]
+            t_course_efc = self.third_course[7]
             t_course_efc_ = Label(self.root, text=t_course_efc)
-            t_course_efc_.grid(row=4, column=6)
+            t_course_efc_.grid(row=4, column=7)
 
         third_course_mean = Label(self.root, text='00', font='bold')
-        third_course_mean.grid(row=4, column=7)
+        third_course_mean.grid(row=4, column=8)
 
         third_course_button = Button(self.root, text='Calcular',
                                      command=lambda: self.media_button(third_course_mean,
                                                                        t_course_ta1, t_course_ta2, t_course_ta3,
-                                                                       t_course_ta4, t_course_emc, t_course_efc))
-        third_course_button.grid(row=4, column=8)
+                                                                       t_course_ta4, t_course_ta5, t_course_emc, t_course_efc))
+        third_course_button.grid(row=4, column=9)
 
     def fourth_course_gui(self):
 
         fourth_course_name = Label(self.root, text=self.fourth_course[0])
         fourth_course_name.grid(row=5, column=0)
-        # getting the "TA1, TA2, TA3, TA4, EMC, EFC" grades
+        # getting the "TA1, TA2, TA3, TA4, TA5, EMC, EFC" grades
         if self.fourth_course[1] == '0':
             fth_course_ta1 = Entry(self.root, width=2)
             fth_course_ta1.insert(0, '00')
@@ -303,37 +333,46 @@ class UdhGui:
             fth_course_ta4_.grid(row=5, column=4)
 
         if self.fourth_course[5] == '0':
-            fth_course_emc = Entry(self.root, width=2)
-            fth_course_emc.insert(0, '00')
-            fth_course_emc.grid(row=5, column=5)
+            fth_course_ta5 = Entry(self.root, width=2)
+            fth_course_ta5.insert(0, '00')
+            fth_course_ta5.grid(row=5, column=5)
         else:
-            fth_course_emc = self.fourth_course[5]
-            fth_course_emc_ = Label(self.root, text=fth_course_emc)
-            fth_course_emc_.grid(row=5, column=5)
+            fth_course_ta5 = self.fourth_course[5]
+            fth_course_ta5_ = Label(self.root, text=fth_course_ta5)
+            fth_course_ta5_.grid(row=5, column=5)
 
         if self.fourth_course[6] == '0':
+            fth_course_emc = Entry(self.root, width=2)
+            fth_course_emc.insert(0, '00')
+            fth_course_emc.grid(row=5, column=6)
+        else:
+            fth_course_emc = self.fourth_course[6]
+            fth_course_emc_ = Label(self.root, text=fth_course_emc)
+            fth_course_emc_.grid(row=5, column=6)
+
+        if self.fourth_course[7] == '0':
             fth_course_efc = Entry(self.root, width=2)
             fth_course_efc.insert(0, '00')
-            fth_course_efc.grid(row=5, column=6)
+            fth_course_efc.grid(row=5, column=7)
         else:
-            fth_course_efc = self.fourth_course[6]
+            fth_course_efc = self.fourth_course[7]
             fth_course_efc_ = Label(self.root, text=fth_course_efc)
-            fth_course_efc_.grid(row=5, column=6)
+            fth_course_efc_.grid(row=5, column=7)
 
         fourth_course_media = Label(self.root, text='00', font='bold')
-        fourth_course_media.grid(row=5, column=7)
+        fourth_course_media.grid(row=5, column=8)
 
         fourth_course_button = Button(self.root, text='Calcular',
                                       command=lambda: self.media_button(fourth_course_media,
                                                                         fth_course_ta1, fth_course_ta2, fth_course_ta3,
-                                                                        fth_course_ta4, fth_course_emc, fth_course_efc))
-        fourth_course_button.grid(row=5, column=8)
+                                                                        fth_course_ta4, fth_course_ta5, fth_course_emc, fth_course_efc))
+        fourth_course_button.grid(row=5, column=9)
 
     def fifth_course_gui(self):
 
         fifth_course_name = Label(self.root, text=self.fifth_course[0])
         fifth_course_name.grid(row=6, column=0)
-        # getting the "TA1, TA2, TA3, TA4, EMC, EFC" grades
+        # getting the "TA1, TA2, TA3, TA4, TA5, EMC, EFC" grades
         if self.fifth_course[1] == '0':
             fifth_course_ta1 = Entry(self.root, width=2)
             fifth_course_ta1.insert(0, '00')
@@ -371,37 +410,46 @@ class UdhGui:
             fifth_course_ta4_.grid(row=6, column=4)
 
         if self.fifth_course[5] == '0':
-            fifth_course_emc = Entry(self.root, width=2)
-            fifth_course_emc.insert(0, '00')
-            fifth_course_emc.grid(row=6, column=5)
+            fifth_course_ta5 = Entry(self.root, width=2)
+            fifth_course_ta5.insert(0, '00')
+            fifth_course_ta5.grid(row=6, column=5)
         else:
-            fifth_course_emc = self.fifth_course[5]
-            fifth_course_emc_ = Label(self.root, text=fifth_course_emc)
-            fifth_course_emc_.grid(row=6, column=5)
+            fifth_course_ta5 = self.fifth_course[5]
+            fifth_course_ta5_ = Label(self.root, text=fifth_course_ta5)
+            fifth_course_ta5_.grid(row=6, column=5)
 
         if self.fifth_course[6] == '0':
+            fifth_course_emc = Entry(self.root, width=2)
+            fifth_course_emc.insert(0, '00')
+            fifth_course_emc.grid(row=6, column=6)
+        else:
+            fifth_course_emc = self.fifth_course[6]
+            fifth_course_emc_ = Label(self.root, text=fifth_course_emc)
+            fifth_course_emc_.grid(row=6, column=6)
+
+        if self.fifth_course[7] == '0':
             fifth_course_efc = Entry(self.root, width=2)
             fifth_course_efc.insert(0, '00')
-            fifth_course_efc.grid(row=6, column=6)
+            fifth_course_efc.grid(row=6, column=7)
         else:
-            fifth_course_efc = self.fifth_course[6]
+            fifth_course_efc = self.fifth_course[7]
             fifth_course_efc_ = Label(self.root, text=fifth_course_efc)
-            fifth_course_efc_.grid(row=6, column=6)
+            fifth_course_efc_.grid(row=6, column=7)
 
         fifth_course_media = Label(self.root, text='00', font='bold')
-        fifth_course_media.grid(row=6, column=7)
+        fifth_course_media.grid(row=6, column=8)
 
         fifth_course_button = Button(self.root, text='Calcular',
                                      command=lambda: self.media_button(fifth_course_media,
                                                                        fifth_course_ta1, fifth_course_ta2, fifth_course_ta3,
-                                                                       fifth_course_ta4, fifth_course_emc, fifth_course_efc))
-        fifth_course_button.grid(row=6, column=8)
+                                                                       fifth_course_ta4, fifth_course_ta5, fifth_course_emc, fifth_course_efc))
+        fifth_course_button.grid(row=6, column=9)
 
     def sixth_course_gui(self):
 
         sixth_course_name = Label(self.root, text=self.sixth_course[0])
         sixth_course_name.grid(row=7, column=0)
-        # getting the "TA1, TA2, TA3, TA4, EMC, EFC" grades
+        # getting the "TA1, TA2, TA3, TA4, TA5, EMC, EFC" grades
         if self.sixth_course[1] == '0':
             sixth_course_ta1 = Entry(self.root, width=2)
             sixth_course_ta1.insert(0, '00')
@@ -439,37 +487,46 @@ class UdhGui:
             sixth_course_ta4_.grid(row=7, column=4)
 
         if self.sixth_course[5] == '0':
-            sixth_course_emc = Entry(self.root, width=2)
-            sixth_course_emc.insert(0, '00')
-            sixth_course_emc.grid(row=7, column=5)
+            sixth_course_ta5 = Entry(self.root, width=2)
+            sixth_course_ta5.insert(0, '00')
+            sixth_course_ta5.grid(row=7, column=5)
         else:
-            sixth_course_emc = self.sixth_course[5]
-            sixth_course_emc_ = Label(self.root, text=sixth_course_emc)
-            sixth_course_emc_.grid(row=7, column=5)
+            sixth_course_ta5 = self.sixth_course[5]
+            sixth_course_ta5_ = Label(self.root, text=sixth_course_ta5)
+            sixth_course_ta5_.grid(row=7, column=5)
 
         if self.sixth_course[6] == '0':
+            sixth_course_emc = Entry(self.root, width=2)
+            sixth_course_emc.insert(0, '00')
+            sixth_course_emc.grid(row=7, column=6)
+        else:
+            sixth_course_emc = self.sixth_course[6]
+            sixth_course_emc_ = Label(self.root, text=sixth_course_emc)
+            sixth_course_emc_.grid(row=7, column=6)
+
+        if self.sixth_course[7] == '0':
             sixth_course_efc = Entry(self.root, width=2)
             sixth_course_efc.insert(0, '00')
-            sixth_course_efc.grid(row=7, column=6)
+            sixth_course_efc.grid(row=7, column=7)
         else:
-            sixth_course_efc = self.sixth_course[6]
+            sixth_course_efc = self.sixth_course[7]
             sixth_course_efc_ = Label(self.root, text=sixth_course_efc)
-            sixth_course_efc_.grid(row=7, column=6)
+            sixth_course_efc_.grid(row=7, column=7)
 
         sixth_course_media = Label(self.root, text='00', font='bold')
-        sixth_course_media.grid(row=7, column=7)
+        sixth_course_media.grid(row=7, column=8)
 
         sixth_course_button = Button(self.root, text='Calcular',
                                      command=lambda: self.media_button(sixth_course_media,
                                                                        sixth_course_ta1, sixth_course_ta2, sixth_course_ta3,
-                                                                       sixth_course_ta4, sixth_course_emc, sixth_course_efc))
-        sixth_course_button.grid(row=7, column=8)
+                                                                       sixth_course_ta4, sixth_course_ta5, sixth_course_emc, sixth_course_efc))
+        sixth_course_button.grid(row=7, column=9)
 
     def seventh_course_gui(self):
 
         seventh_course_name = Label(self.root, text=self.seventh_course[0])
         seventh_course_name.grid(row=8, column=0)
-        # getting the "TA1, TA2, TA3, TA4, EMC, EFC" grades
+        # getting the "TA1, TA2, TA3, TA4, TA5, EMC, EFC" grades
         if self.seventh_course[1] == '0':
             seventh_course_ta1 = Entry(self.root, width=2)
             seventh_course_ta1.insert(0, '00')
@@ -507,31 +564,40 @@ class UdhGui:
             seventh_course_ta4_.grid(row=8, column=4)
 
         if self.seventh_course[5] == '0':
-            seventh_course_emc = Entry(self.root, width=2)
-            seventh_course_emc.insert(0, '00')
-            seventh_course_emc.grid(row=8, column=5)
+            seventh_course_ta5 = Entry(self.root, width=2)
+            seventh_course_ta5.insert(0, '00')
+            seventh_course_ta5.grid(row=8, column=5)
         else:
-            seventh_course_emc = self.seventh_course[5]
-            seventh_course_emc_ = Label(self.root, text=seventh_course_emc)
-            seventh_course_emc_.grid(row=8, column=5)
+            seventh_course_ta5 = self.seventh_course[5]
+            seventh_course_ta5_ = Label(self.root, text=seventh_course_ta5)
+            seventh_course_ta5_.grid(row=8, column=5)
 
         if self.seventh_course[6] == '0':
+            seventh_course_emc = Entry(self.root, width=2)
+            seventh_course_emc.insert(0, '00')
+            seventh_course_emc.grid(row=8, column=6)
+        else:
+            seventh_course_emc = self.seventh_course[6]
+            seventh_course_emc_ = Label(self.root, text=seventh_course_emc)
+            seventh_course_emc_.grid(row=8, column=6)
+
+        if self.seventh_course[7] == '0':
             seventh_course_efc = Entry(self.root, width=2)
             seventh_course_efc.insert(0, '00')
-            seventh_course_efc.grid(row=8, column=6)
+            seventh_course_efc.grid(row=8, column=7)
         else:
-            seventh_course_efc = self.seventh_course[6]
+            seventh_course_efc = self.seventh_course[7]
             seventh_course_efc_ = Label(self.root, text=seventh_course_efc)
-            seventh_course_efc_.grid(row=8, column=6)
+            seventh_course_efc_.grid(row=8, column=7)
 
         seventh_course_media = Label(self.root, text='00', font='bold')
-        seventh_course_media.grid(row=8, column=7)
+        seventh_course_media.grid(row=8, column=8)
 
         seventh_course_button = Button(self.root, text='Calcular',
                                        command=lambda: self.media_button(seventh_course_media,
                                                                          seventh_course_ta1, seventh_course_ta2, seventh_course_ta3,
-                                                                         seventh_course_ta4, seventh_course_emc, seventh_course_efc))
-        seventh_course_button.grid(row=8, column=8)
+                                                                         seventh_course_ta4, seventh_course_ta5, seventh_course_emc, seventh_course_efc))
+        seventh_course_button.grid(row=8, column=9)
 
     def main(self):
         self.first_course_gui()

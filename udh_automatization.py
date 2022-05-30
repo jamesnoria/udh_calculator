@@ -37,7 +37,7 @@ class UdhAutomatization:
 
         # Access to 'notas parciales'
         student_grades = self.driver.find_element(
-            By.XPATH, '//*[@id="ctl00_Menu1"]/ul/li[22]/a')
+            By.XPATH, '//*[@id="ctl00_Menu1"]/ul/li[23]/a')
         student_grades.send_keys(Keys.ENTER)
 
         # self.driver.close()
@@ -61,6 +61,9 @@ class UdhAutomatization:
             f_course_ta4 = self.driver.find_element(
                 By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[2]/td[7]').text
             f_course_grades.append(f_course_ta4)
+            f_course_ta5 = self.driver.find_element(
+                By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[2]/td[8]').text
+            f_course_grades.append(f_course_ta5)
             f_course_emc = self.driver.find_element(
                 By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[2]/td[10]').text
             f_course_grades.append(f_course_emc)
@@ -71,7 +74,7 @@ class UdhAutomatization:
             # return a list with the name and all grades
             return f_course_grades
         except:
-            f_course_grades = ['Curso vacio', '0', '0', '0', '0', '0', '0']
+            f_course_grades = ['Curso vacio', '0', '0', '0', '0', '0', '0', '0']
             return f_course_grades
 
     def second_course(self):
@@ -93,6 +96,9 @@ class UdhAutomatization:
             s_course_ta4 = self.driver.find_element(
                 By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[3]/td[7]').text
             s_course_grades.append(s_course_ta4)
+            s_course_ta5 = self.driver.find_element(
+                By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[3]/td[8]').text
+            s_course_grades.append(s_course_ta5)
             s_course_emc = self.driver.find_element(
                 By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[3]/td[10]').text
             s_course_grades.append(s_course_emc)
@@ -103,7 +109,7 @@ class UdhAutomatization:
             # return a list with the name and all grades
             return s_course_grades
         except:
-            s_course_grades = ['Curso vacio', '0', '0', '0', '0', '0', '0']
+            s_course_grades = ['Curso vacio', '0', '0', '0', '0', '0', '0', '0']
             return s_course_grades
 
     def third_course(self):
@@ -125,6 +131,9 @@ class UdhAutomatization:
             t_course_ta4 = self.driver.find_element(
                 By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[4]/td[7]').text
             t_course_grades.append(t_course_ta4)
+            t_course_ta5 = self.driver.find_element(
+                By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[4]/td[8]').text
+            t_course_grades.append(t_course_ta5)
             t_course_emc = self.driver.find_element(
                 By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[4]/td[10]').text
             t_course_grades.append(t_course_emc)
@@ -135,7 +144,7 @@ class UdhAutomatization:
             # return a list with the name and all grades
             return t_course_grades
         except:
-            t_course_grades = ['Curso vacio', '0', '0', '0', '0', '0', '0']
+            t_course_grades = ['Curso vacio', '0', '0', '0', '0', '0', '0', '0']
             return t_course_grades
 
     def fourth_course(self):
@@ -157,6 +166,9 @@ class UdhAutomatization:
             fth_score_ta4 = self.driver.find_element(
                 By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[5]/td[7]').text
             fth_course_grades.append(fth_score_ta4)
+            fth_score_ta5 = self.driver.find_element(
+                By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[5]/td[8]').text
+            fth_course_grades.append(fth_score_ta5)
             fth_score_emc = self.driver.find_element(
                 By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[5]/td[10]').text
             fth_course_grades.append(fth_score_emc)
@@ -167,7 +179,7 @@ class UdhAutomatization:
             # return a list with the name and all grades
             return fth_course_grades
         except:
-            fth_course_grades = ['Curso vacio', '0', '0', '0', '0', '0', '0']
+            fth_course_grades = ['Curso vacio', '0', '0', '0', '0', '0', '0', '0']
             return fth_course_grades
 
     def fifth_course(self):
@@ -189,6 +201,9 @@ class UdhAutomatization:
             fifth_score_ta4 = self.driver.find_element(
                 By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[6]/td[7]').text
             fifth_course_grades.append(fifth_score_ta4)
+            fifth_score_ta5 = self.driver.find_element(
+                By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[6]/td[8]').text
+            fifth_course_grades.append(fifth_score_ta5)
             fifth_score_emc = self.driver.find_element(
                 By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[6]/td[10]').text
             fifth_course_grades.append(fifth_score_emc)
@@ -199,7 +214,7 @@ class UdhAutomatization:
             # return a list with the name and all grades
             return fifth_course_grades
         except:
-            fifth_course_grades = ['Curso vacio', '0', '0', '0', '0', '0', '0']
+            fifth_course_grades = ['Curso vacio', '0', '0', '0', '0', '0', '0', '0']
             return fifth_course_grades
 
     def sixth_course(self):
@@ -221,6 +236,9 @@ class UdhAutomatization:
             sixth_score_ta4 = self.driver.find_element(
                 By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[7]/td[7]').text
             sixth_course_grades.append(sixth_score_ta4)
+            sixth_score_ta5 = self.driver.find_element(
+                By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[7]/td[8]').text
+            sixth_course_grades.append(sixth_score_ta5)
             sixth_score_emc = self.driver.find_element(
                 By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[7]/td[10]').text
             sixth_course_grades.append(sixth_score_emc)
@@ -231,7 +249,7 @@ class UdhAutomatization:
             # return a list with the name and all grades
             return sixth_course_grades
         except:
-            sixth_course_grades = ['Curso vacio', '0', '0', '0', '0', '0', '0']
+            sixth_course_grades = ['Curso vacio', '0', '0', '0', '0', '0', '0', '0']
             return sixth_course_grades
 
     def seventh_course(self):
@@ -253,6 +271,9 @@ class UdhAutomatization:
             seventh_score_ta4 = self.driver.find_element(
                 By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[8]/td[7]').text
             seventh_course_grades.append(seventh_score_ta4)
+            seventh_score_ta5 = self.driver.find_element(
+                By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[8]/td[8]').text
+            seventh_course_grades.append(seventh_score_ta5)
             seventh_score_emc = self.driver.find_element(
                 By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_GridView1"]/tbody/tr[8]/td[10]').text
             seventh_course_grades.append(seventh_score_emc)
@@ -267,7 +288,7 @@ class UdhAutomatization:
             return seventh_course_grades
         except:
             seventh_course_grades = [
-                'Curso vacio', '0', '0', '0', '0', '0', '0']
+                'Curso vacio', '0', '0', '0', '0', '0', '0', '0']
 
             # closing chrome after get info
             self.driver.close()
